@@ -1,0 +1,21 @@
+---
+title: "Kaggle Titanic leaderboard analysis"
+output:
+  html_document:
+    df_print: paged
+---
+
+
+```{r}
+setwd("~/Documents/GitHub/datasci/titanic")
+data <- read.csv("csv/kaggle-lb.csv")
+names(data)
+```
+```{r}
+scores <- data$Score
+hist(scores, xlim = c(quantile(scores, 0.05), quantile(scores, 0.95)), breaks = 100, col = "white")
+```
+```{r}
+summary(scores)
+```
+
